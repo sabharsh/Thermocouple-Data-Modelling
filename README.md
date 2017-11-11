@@ -3,9 +3,13 @@
 # Introduction
 
 I created an algorithm to analyse 100 data sets that contain time histories over a period of 10 seconds and the corresponding temperatures measured from thermocouple sensors. The algorithm is supposed to calculate the components of yL, yH, ts, and 𝜏 and create a model of the data. The criteria for success is having low SSE values as well as a good fitting plot; additionally, actual parameter values for 4 data set are provided as well.
+
 The algorithm takes in data from the thermocouple, smoothens it using moving averages, and creates a model from the temperature-time data. The algorithm then returns values of SSE, 𝜏, yL, yH, and ts.
+
 One critical decision was the I decided to smoothen the noisy data using moving averages with a window of five elements. This was particularly an advantage because it allowed as to compute the various parameters with greater ease. Working on the noisy data was not a reliable method since my techniques of calculation were thrown off due to the jagged data points with random inconsistencies. One improvement I made in this regard is I removed a nested loop to reduce the execution time and improve the efficiency.
+
 The second critical decision was that I categorized the data into four types of trends. I compared the temperature of the last data point to the first data point to check whether the data set is heating or cooling. Cooling data was set to negative trend whereas heating data was set to a positive trend. In addition, the slope of the data set over the last few seconds is also considered. If it is more than a certain threshold, the trend is set to 2 with the appropriate sign, otherwise the trend is set to 1 with the appropriate sign. This is one of the improvements I made in our algorithm and is described in more detail in the procedure and particularly helped us deal with the different types of data differently.
+
 Lastly, I decided to compute tau using 2 different approached, one for heating and one for cooling. For the cooling data, I took 36.8% of the absolute difference between yL and yH whereas for the heating data I took 62.3% of the absolute difference between yL and yH. The allowed us to accurately compute the tau value and hence compute and plot the model values.
 
 # Procedure
@@ -47,6 +51,7 @@ Table 3 displays the statistics for my model of 𝛕 and price of the several th
 # Interpretation
 
 I believe that one source of error for the experiments might be the brief time that the thermocouple is in the air when switching from hot to cold water, or cold to hot water or when the thermocouple might not be completely submerged. This can be seen in many data plots where the temperature reading does not stabilize. The algorithm doesn’t anticipate the temperature to stabilize as the time approaches 10 seconds, however, it is not able to distinguish between un-stabilized and stabilized data with 100% accuracy which is another source of error.
+
 I believe that the thermocouples from FOS are fairly priced, and perform well for what you pay for, and for $15 the thermocouple does perform well as shown from its low time constant. The thermocouples are very consistent with their performance and pricing. As the performance increases exponentially the pricing does as well which is reasonable.
 
 # References
