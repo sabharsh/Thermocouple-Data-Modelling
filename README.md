@@ -1,6 +1,6 @@
-## Thermocouple-Data-Modelling
+# Thermocouple-Data-Modelling
 
-# Introduction
+## Introduction
 
 I created an algorithm to analyse 100 data sets that contain time histories over a period of 10 seconds and the corresponding temperatures measured from thermocouple sensors. The algorithm is supposed to calculate the components of yL, yH, ts, and 𝜏 and create a model of the data. The criteria for success is having low SSE values as well as a good fitting plot; additionally, actual parameter values for 4 data set are provided as well.
 
@@ -12,7 +12,7 @@ The second critical decision was that I categorized the data into four types of 
 
 Lastly, I decided to compute tau using 2 different approached, one for heating and one for cooling. For the cooling data, I took 36.8% of the absolute difference between yL and yH whereas for the heating data I took 62.3% of the absolute difference between yL and yH. The allowed me to accurately compute the tau value and hence compute and plot the model values.
 
-# Procedure
+## Procedure
 
 Our algorithm can be broken down into numerous simple steps which are as follow:
 
@@ -32,11 +32,11 @@ Then, ts is subtracted from time corresponding to the ytau value to obtain 𝜏.
 
 Step 7: The model values are calculated using the equations provided in the guidelines keeping the trend in mind since there are different equations for cooling and heating data.
 
-# Firgures and Plots
+## Figures and Plots
 
 All figures and plots are contained in the file "plots_and_figures.pdf"
 
-# Results
+## Results
 
 Application of the algorithm to various datasets is exhibited below:
 
@@ -48,12 +48,12 @@ Table 2 shows the model parameters of clean and noisy data sets where the thermo
 
 Table 3 displays the statistics for my model of 𝛕 and price of the several thermocouples and the improvement of this model from my previous algorithm. The table shows the reduced standard deviation of 𝛕, mean of 𝛕, and mean SSE values for each thermocouple indicating improvement.
 
-# Interpretation
+## Interpretation
 
 I believe that one source of error for the experiments might be the brief time that the thermocouple is in the air when switching from hot to cold water, or cold to hot water or when the thermocouple might not be completely submerged. This can be seen in many data plots where the temperature reading does not stabilize. The algorithm doesn’t anticipate the temperature to stabilize as the time approaches 10 seconds, however, it is not able to distinguish between un-stabilized and stabilized data with 100% accuracy which is another source of error.
 
 I believe that the thermocouples from FOS are fairly priced, and perform well for what you pay for, and for $15 the thermocouple does perform well as shown from its low time constant. The thermocouples are very consistent with their performance and pricing. As the performance increases exponentially the pricing does as well which is reasonable.
 
-# References
+## References
 
 "System Dynamics - Time Constants." System Dynamics - Time Constants. N.p., n.d. Web. 19 Apr. 2017. http://www.facstaff.bucknell.edu/mastascu/eLessonsHTML/SysDyn/SysDyn3TCBasic.htm
