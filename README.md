@@ -1,5 +1,7 @@
 # Thermocouple-Data-Modelling
 
+Execution: Run Project_AlgExec.m in MATALB to view the modelling and analysis.
+
 ## Introduction
 
 I created an algorithm to analyse 100 data sets that contain time histories over a period of 10 seconds and the corresponding temperatures measured from thermocouple sensors. The algorithm is supposed to calculate the components of yL, yH, ts, and 𝜏 and create a model of the data. The criteria for success is having low SSE values as well as a good fitting plot; additionally, actual parameter values for 4 data set are provided as well.
