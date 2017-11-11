@@ -34,7 +34,7 @@ Step 7: The model values are calculated using the equations provided in the guid
 
 # Firgures and Plots
 
-All figures and plots are contained in the file "plots_and_figures.docx"
+All figures and plots are contained in the file "plots_and_figures.pdf"
 
 # Results
 
